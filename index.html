@@ -14,25 +14,16 @@
     <div class="todo-wrapper">
         <div class="todo-title">todos</div>
         <div class="todo-box">
-
-            <div class="todo-input">
+            <div class="todo-input-box">
                 <button class="complete-all-btn">✔</button>
-                <input type="text" class="todo_input" placeholder="할 일">
+                <div class="todo-input">
+                    <input type="text" class="todo_input" placeholder="할 일">
+                </div>
             </div>
              <ul class="todo-list">
-                <li class="todo-item checked">
-                    <div class="checkbox">✔</div>
-                    <div class="todo">완료 할 일</div>
-                    <button class="delBtn">x</button>
-                </li>
-                <li class="todo-item">
-                    <div class="checkbox"></div>
-                    <div class="todo">미완료 할 일</div>
-                    <button class="delBtn">x</button>
-                </li>
             </ul>
             <div class="todo-bottom">
-                <div class="left-items">3 items left</div>
+                <div class="left-items">0 items left</div>
                 <div class="button-group">
                     <button class="show-all-btn" data-type="all">All</button>
                     <button class="show-active-btn" data-type="active">Active</button>
@@ -41,10 +32,10 @@
                 <button class="clear-completed-btn">Clear Completed</button>
             </div>
         </div>
-        <p class="info">더블클릭시 수정 ㅆㄱㄴ</p>
+        <p class="info">더블클릭 시 수정</p>
 
     </div>
     
 </body>
-<script src="todos.js"></script>
+<script src="js/todo.js"></script>
 </html>
