@@ -35,17 +35,18 @@ const getCompletedTodos = () => {
     return todos.filter(todo => todo.isCompleted === true);
 }
 
+// *
 const setLeftItems = () => {
     const leftTodos = getActiveTodos().length;
     leftItemsElem.innerHTML = `${leftTodos} items left`;
 }
 
+// *
 const completeAll = () => {
     completeAllBtnElem.classList.add('checked');
     const newTodos = getAllTodos().map(todo => ({...todo, isCompleted: true}));
     setTodos(newTodos);
 }
-
 const incompleteAll = () => {
     completeAllBtnElem.classList.remove('checked');
     const newTodos = getAllTodos().map(todo => ({...todo, isCompleted: false}));
@@ -133,6 +134,7 @@ const onDbclickTodo = (e, todoId) => {
 const clearComplietedTodos =() => {
     const newTodos = getActiveTodos();
     setTodos(newTodos);
+    completeAllBtnElem.classList.remove('checked');
     paintTodos();
 }
 
@@ -153,8 +155,11 @@ const paintTodo = (todo) => {
 
     const delBtnElem = document.createElement('button');
     delBtnElem.classList.add('delBtn');
+    const imgElem = document.createElement('img');
+    imgElem.setAttribute('src', "img/X.png");
+    delBtnElem.appendChild(imgElem);
     delBtnElem.addEventListener('click', () => deleteTodo(todo.id));
-    delBtnElem.innerText = "X";
+
 
     if(todo.isCompleted){
         todoItemElem.classList.add('checked');
